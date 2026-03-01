@@ -19,8 +19,13 @@ try:
     from .mabbob import MA_BBOB
 except Exception:
     MA_BBOB = None
-
 try:
     from .photonics import Photonics
 except Exception:
     Photonics = None
+try:
+    from .lens_optimization import LensOptimization
+except Exception:
+    LensOptimization = None
+
+
