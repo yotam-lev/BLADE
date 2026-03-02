@@ -28,7 +28,7 @@ class MLFlowExperimentLogger(ExperimentLogger):
     An ExperimentLogger subclass that keeps the original file-based logging,
     and also logs runs to MLflow. The idea is:
       - Call open_run() at the start of a run (this calls mlflow.start_run()).
-      - Run your optimization, logging step-level data via MLFlowRunLogger.
+      - Run your optimisation, logging step-level data via MLFlowRunLogger.
       - Call add_run() at the end, which logs final info and ends the MLflow run.
     """
 

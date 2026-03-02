@@ -2,7 +2,7 @@ from typing import Optional
 
 
 class PackingBase:
-    """Base class for circle packing optimization problems (geometry/packing).
+    """Base class for circle packing optimisation problems (geometry/packing).
 
     Contract for candidates:
       - Return a NumPy array of shape (n, 3), each row [x, y, r].

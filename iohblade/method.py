@@ -11,7 +11,7 @@ from typing import Any
 class Method(ABC):
     def __init__(self, llm: LLM, budget, name="Method"):
         """
-        Initializes a method (optimization algorithm) instance.
+        Initializes a method (optimisation algorithm) instance.
 
         Args:
             llm (LLM): LLM instance to be used.

@@ -26,7 +26,7 @@ def decremental_rank_search(
         args: argparse-like object carrying provider, model, parents, budget, etc.
         minimization: Whether the objective is minimization
         tol: Exactness tolerance (<= tol counts as exact)
-        run_fn: Callable that runs a single optimization and returns
+        run_fn: Callable that runs a single optimisation and returns
                 (best_solution, best_fitness, used_budget)
 
     Returns:

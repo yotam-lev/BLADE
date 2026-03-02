@@ -5,7 +5,7 @@ for the camera lens design problem.
 from iohblade.experiment import Experiment
 from iohblade.llm import OpenAI_LLM  # or Ollama_LLM, Claude_LLM
 from iohblade.methods import LLaMEA, RandomSearch
-from iohblade.problems import LensOptimization
+from iohblade.problems import Lensoptimisation
 from iohblade.loggers import ExperimentLogger
 
 # 1. Configure the LLM
@@ -27,7 +27,7 @@ llamea = LLaMEA(
 training_seeds = [(s,) for s in range(1, 6)]
 test_seeds = [(s,) for s in range(6, 16)]
 
-lens_problem = LensOptimization(
+lens_problem = Lensoptimisation(
     training_instances=training_seeds,
     test_instances=test_seeds,
     budget_factor=5000,   # Each generated optimizer gets 5000 func evals
@@ -36,7 +36,7 @@ lens_problem = LensOptimization(
 )
 
 # 4. Run experiment
-logger = ExperimentLogger("results/lens_optimization")
+logger = ExperimentLogger("results/lens_optimisation")
 experiment = Experiment(
     methods=[RS, llamea],
     problems=[lens_problem],

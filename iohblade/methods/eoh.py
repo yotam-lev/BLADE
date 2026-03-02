@@ -156,7 +156,7 @@ class EoH(Method):
         code = best.get("code", "")
         desc = best.get("algorithm", "")
         name_match = re.search(r"class\s+(\w+)", code)
-        name = name_match.group(1) if name_match else "OptimizationAlgorithm"
+        name = name_match.group(1) if name_match else "optimisationAlgorithm"
         solution = Solution(code=code, name=name, description=desc)
         solution.set_scores(-best.get("objective", 0))
         return solution

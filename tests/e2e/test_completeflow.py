@@ -64,7 +64,7 @@ def _make_llm(llm_class):
     return llm_class(**kwargs)
 
 
-def test_full_matrix_experiment_optimization(cleanup_tmp_dir, monkeypatch):
+def test_full_matrix_experiment_optimisation(cleanup_tmp_dir, monkeypatch):
     # Patch the provider-specific network call with a universal fake
     def fake_query(self, session_messages, **kwargs):
         return DUMMY_REPLY_OPT

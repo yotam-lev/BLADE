@@ -66,13 +66,13 @@ class plasmonic_nanostructure(photonic_problem):
         full_sim.struct = full_struct
         return full_sim
 
-    # ------- the optimization target function -------
+    # ------- the optimisation target function -------
 
     def __call__(self, x):
         """cost function: maximize scattering towards small solid angle
 
         Args:
-            x (list): optimization params --> pos of elements
+            x (list): optimisation params --> pos of elements
             element_sim (`pyGDM2.core.simulation`): single element simulation
             method (str): pyGDM2 solver method
 

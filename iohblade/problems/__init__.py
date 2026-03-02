@@ -24,8 +24,8 @@ try:
 except Exception:
     Photonics = None
 try:
-    from .lens_optimization import LensOptimization
+    from .lens_optimisation import LensOptimisation
 except Exception:
-    LensOptimization = None
+    LensOptimisation = None
 
 

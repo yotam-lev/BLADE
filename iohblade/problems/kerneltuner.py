@@ -43,7 +43,7 @@ class OverBudgetException(Exception):
 
 class Kerneltuner(Problem):
     """
-    Problem class for evaluating optimization algorithms on kernel tuner real world benchmark.
+    Problem class for evaluating optimisation algorithms on kernel tuner real world benchmark.
     Note that this problem requires additional installation steps.
 
     """
@@ -69,7 +69,7 @@ class Kerneltuner(Problem):
             kernels (list): The kernels (applications) to train on.
             name (str): The name of the problem.
             eval_timeout (int): The evaluation timeout in seconds.
-            budget (int): The budget for the optimization algorithms/
+            budget (int): The budget for the optimisation algorithms/
             cache_dir (str): The directory that contains the kernel tuner data files.
             extra_info (bool): If True, additional information about the problem is added to the prompt. Only works for one kernel.
         """
@@ -114,10 +114,10 @@ class Kerneltuner(Problem):
             eval_timeout,
             dependencies,
         )
-        self.budget = budget  # The budget for the optimization algorithms
+        self.budget = budget  # The budget for the optimisation algorithms
         self.task_prompt = """
 You are a highly skilled computer scientist in the field of natural computing and hardware kernel tuning. Your task is to design novel metaheuristic algorithms to solve kernel tuner problems (integer, variable dimension, contraint).
-The optimization algorithm should handle a kernel tuning task. Your task is to write the optimization algorithm in Python code. The code should inherit the `OptAlg` class and contain an `__init__(self, budget=5000)` function with optional arguments and the function `def __call__(self, func, searchspace)`, which should optimize the black box function `func` till the `func.budget_spent_fraction` is 1.0.
+The optimisation algorithm should handle a kernel tuning task. Your task is to write the optimisation algorithm in Python code. The code should inherit the `OptAlg` class and contain an `__init__(self, budget=5000)` function with optional arguments and the function `def __call__(self, func, searchspace)`, which should optimize the black box function `func` till the `func.budget_spent_fraction` is 1.0.
 The `searchspace` object can be used to sample random instances, neighbouring instances using `searchspace.get_neighbors(param_config: tuple, neighbor_method='Hamming')` where neighbor_method can be any of ["strictly-adjacent", "adjacent", "Hamming"] and to check validity of parameter settings using `searchspace.is_param_config_valid(tuple(instance))`, nothing else. The dimensionality can be varied.
 In addition, the variable `tune_params` is a dictionary containing the tuning parameters with their ranges and constraints, it can be obtained directly from the searchspace object `searchspace.tune_params`. The algorithm should be able to handle any number of tuning parameters, and the search space can be continuous or discrete. 
 

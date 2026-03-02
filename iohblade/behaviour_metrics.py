@@ -1,7 +1,7 @@
 """
 behavior_metrics.py
 
-Utility functions for analyzing single-run black box optimization traces.
+Utility functions for analyzing single-run black box optimisation traces.
 
 Each function expects a pandas DataFrame that contains at least:
     * a column "evaluations"   integer evaluation index (starting at 1 or 0)

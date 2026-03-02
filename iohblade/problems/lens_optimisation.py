@@ -1,6 +1,6 @@
 """
 BLADE Problem wrapper for the CameraLensSimulation Double-Gauss
-lens optimization benchmark.
+lens optimisation benchmark.
 
 Each BLADE Solution contains LLM-generated Python code that defines
 a callable optimizer class. This Problem executes that optimizer
@@ -15,7 +15,7 @@ from ..problem import Problem
 from ..solution import Solution
 
 
-class LensOptimization(Problem):
+class LensOptimisation(Problem):
     """
     BLADE problem that evaluates LLM-generated optimizers on the
     Double-Gauss camera lens design from CameraLensSimulation.
@@ -36,7 +36,7 @@ class LensOptimization(Problem):
         training_instances=None,
         test_instances=None,
         budget_factor: int = 5000,
-        name: str = "LensOptimization",
+        name: str = "Lensoptimisation",
         eval_timeout: int = 600,
         logger=None,
     ):
@@ -77,7 +77,7 @@ class LensOptimization(Problem):
 
         # ---- Prompts for the LLM ----
         self.task_prompt = (
-            "You are tasked with writing a novel black-box optimization "
+            "You are tasked with writing a novel black-box optimisation "
             "algorithm to minimize a camera lens design loss function. "
             "The loss function is non-convex, ~24-dimensional (18 continuous "
             "parameters: 10 curvatures + 8 distances, plus 6 discrete glass "
@@ -182,7 +182,7 @@ class LensOptimization(Problem):
                 losses.append(float(best_f))
 
             mean_loss = np.mean(losses)
-            # BLADE maximizes fitness; lens optimization minimizes loss
+            # BLADE maximizes fitness; lens optimisation minimizes loss
             # So fitness = -mean_loss (higher fitness = lower loss = better)
             fitness = -mean_loss
 

@@ -364,7 +364,7 @@ def plot_code_evolution_graphs(
     run_data, expfolder=None, plot_features=None, markersize=None, save=True, ax=None
 ):
     """
-    Plots optimization progress and relationships between successive solutions in an
+    Plots optimisation progress and relationships between successive solutions in an
     evolutionary run based on AST metrics. Can plot multiple features or a single feature on a provided axis.
 
     Args:

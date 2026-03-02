@@ -6,7 +6,7 @@
   </picture>
 </p>
 
-<h1 align="center">IOH-BLADE: Benchmarking LLM-driven Automated Design and Evolution of Iterative Optimization Heuristics</h1>
+<h1 align="center">IOH-BLADE: Benchmarking LLM-driven Automated Design and Evolution of Iterative optimisation Heuristics</h1>
 
 > ⭐ If you like this, please give the repo a star – it helps!
 
@@ -25,6 +25,7 @@
 > See also the [Documentation](https://xai-liacs.github.io/BLADE/).
 
 ## Table of Contents
+
 - [News](#-news)
 - [Introduction](#introduction)
 - [Installation](#-installation)
@@ -35,18 +36,17 @@
 - [License](#-license)
 - [Citation](#-citation)
 
-## 🔥 News 
+## 🔥 News
 
 - 2025.03 ✨✨ **BLADE v0.0.1 released**!
 
-
 ## Introduction
-**BLADE** (Benchmark suite for LLM-driven Automated Design and Evolution) provides a standardized benchmark suite for evaluating automatic algorithm design algorithms, particularly those generating metaheuristics by large language models (LLMs). It focuses on **continuous black-box optimization** and integrates a diverse set of **problems** and **methods**, facilitating fair and comprehensive benchmarking.
 
+**BLADE** (Benchmark suite for LLM-driven Automated Design and Evolution) provides a standardized benchmark suite for evaluating automatic algorithm design algorithms, particularly those generating metaheuristics by large language models (LLMs). It focuses on **continuous black-box optimisation** and integrates a diverse set of **problems** and **methods**, facilitating fair and comprehensive benchmarking.
 
 ### Features
 
-- **Comprehensive Benchmark Suite:** Covers various classes of black-box optimization problems.
+- **Comprehensive Benchmark Suite:** Covers various classes of black-box optimisation problems.
 - **LLM-Driven Evaluation:** Supports algorithm evolution and design using large language models.
 - **Built-In Baselines:** Includes state-of-the-art metaheuristics for comparison.
 - **Automatic Logging & Visualization:** Integrated with **IOHprofiler** for performance tracking.
@@ -55,13 +55,13 @@
 
 BLADE incorporates several benchmark function sets to provide a comprehensive evaluation environment:
 
-| Name                               | Short Description                                                                                                                         | Number of Functions | Multiple Instances |
-|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|---------------------|--------------------|
-| **BBOB** (Black-Box Optimization Benchmarking) | A suite of 24 noiseless functions designed for benchmarking continuous optimization algorithms. [Reference](https://arxiv.org/pdf/1903.06396) | 24                  | Yes                |
-| **SBOX-COST**                      | A set of 24 boundary-constrained functions focusing on strict box-constraint optimization scenarios. [Reference](https://inria.hal.science/hal-04403658/file/sboxcost-cmacomparison-authorversion.pdf) | 24                  | Yes                |
-| **MA-BBOB** (Many-Affine BBOB)     | An extension of the BBOB suite, generating functions through affine combinations and shifts. [Reference](https://dl.acm.org/doi/10.1145/3673908) | Generator-Based     | Yes                |
-| **GECCO MA-BBOB Competition Instances** | A collection of 1,000 pre-defined instances from the GECCO MA-BBOB competition, evaluating algorithm performance on diverse affine-combined functions. [Reference](https://iohprofiler.github.io/competitions) | 1,000               | Yes                |
-| **HLP** (High-Level Properties)   | Generated benchmarks guided by high-level property combinations (e.g., separable, multimodality). | Generator-Based     | Yes                |
+| Name                                           | Short Description                                                                                                                                                                                              | Number of Functions | Multiple Instances |
+| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ------------------ |
+| **BBOB** (Black-Box optimisation Benchmarking) | A suite of 24 noiseless functions designed for benchmarking continuous optimisation algorithms. [Reference](https://arxiv.org/pdf/1903.06396)                                                                  | 24                  | Yes                |
+| **SBOX-COST**                                  | A set of 24 boundary-constrained functions focusing on strict box-constraint optimisation scenarios. [Reference](https://inria.hal.science/hal-04403658/file/sboxcost-cmacomparison-authorversion.pdf)         | 24                  | Yes                |
+| **MA-BBOB** (Many-Affine BBOB)                 | An extension of the BBOB suite, generating functions through affine combinations and shifts. [Reference](https://dl.acm.org/doi/10.1145/3673908)                                                               | Generator-Based     | Yes                |
+| **GECCO MA-BBOB Competition Instances**        | A collection of 1,000 pre-defined instances from the GECCO MA-BBOB competition, evaluating algorithm performance on diverse affine-combined functions. [Reference](https://iohprofiler.github.io/competitions) | 1,000               | Yes                |
+| **HLP** (High-Level Properties)                | Generated benchmarks guided by high-level property combinations (e.g., separable, multimodality).                                                                                                              | Generator-Based     | Yes                |
 
 In addition, several real-world applications are included such as several photonics problems.
 
@@ -79,14 +79,14 @@ summarizes the task and instances.
 
 The suite contains the state-of-the-art LLM-assisted search algorithms:
 
-| Algorithm           | Description                                        | Link
-|--------------------------|-------------------------------------------------|--------------|
-| **LLaMEA** | Large Langugage Model Evolutionary Algorithm                 | [code](https://github.com/nikivanstein/LLaMEA) [paper](https://arxiv.org/abs/2405.20132) |
-| **EoH** | Evolution of Heuristics         | [code](https://github.com/FeiLiu36/EoH) [paper](https://arxiv.org/abs/2401.02051) |
-| **FunSearch**   | Google's GA-like algorithm | [code](https://github.com/google-deepmind/funsearch) [paper](https://www.nature.com/articles/s41586-023-06924-6) |
-| **ReEvo**    | Large Language Models as Hyper-Heuristics with Reflective Evolution | [code](https://github.com/ai4co/LLM-as-HH) [paper](https://arxiv.org/abs/2402.01145) |
-| **LLM-Driven Heuristics Neighbourhood Search** | LLM-Driven Neighborhood Search for Efficient Heuristic Design | [code](https://github.com/Acquent0/LHNS) [paper](https://ieeexplore.ieee.org/abstract/document/11043025) |
-| **Monte Carlo Tree Search** | Monte Carlo Tree Search for Comprehensive Exploration in LLM-Based Automatic Heuristic Design | [code](https://github.com/zz1358m/MCTS-AHD-master/) [paper](https://arxiv.org/abs/2501.08603) |
+| Algorithm                                      | Description                                                                                   | Link                                                                                                             |
+| ---------------------------------------------- | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **LLaMEA**                                     | Large Langugage Model Evolutionary Algorithm                                                  | [code](https://github.com/nikivanstein/LLaMEA) [paper](https://arxiv.org/abs/2405.20132)                         |
+| **EoH**                                        | Evolution of Heuristics                                                                       | [code](https://github.com/FeiLiu36/EoH) [paper](https://arxiv.org/abs/2401.02051)                                |
+| **FunSearch**                                  | Google's GA-like algorithm                                                                    | [code](https://github.com/google-deepmind/funsearch) [paper](https://www.nature.com/articles/s41586-023-06924-6) |
+| **ReEvo**                                      | Large Language Models as Hyper-Heuristics with Reflective Evolution                           | [code](https://github.com/ai4co/LLM-as-HH) [paper](https://arxiv.org/abs/2402.01145)                             |
+| **LLM-Driven Heuristics Neighbourhood Search** | LLM-Driven Neighborhood Search for Efficient Heuristic Design                                 | [code](https://github.com/Acquent0/LHNS) [paper](https://ieeexplore.ieee.org/abstract/document/11043025)         |
+| **Monte Carlo Tree Search**                    | Monte Carlo Tree Search for Comprehensive Exploration in LLM-Based Automatic Heuristic Design | [code](https://github.com/zz1358m/MCTS-AHD-master/) [paper](https://arxiv.org/abs/2501.08603)                    |
 
 > Note, FunSearch is currently not yet integrated.
 
@@ -94,14 +94,13 @@ The suite contains the state-of-the-art LLM-assisted search algorithms:
 
 BLADE supports integration with various LLM APIs to facilitate automated design of algorithms:
 
-| LLM Provider | Description                                                                                                         | Integration Notes                                                                                             |
-|--------------|---------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| LLM Provider | Description                                                                                                                                       | Integration Notes                                                                                                          |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | **Gemini**   | Google's multimodal LLM designed to process text, images, audio, and more. [Reference](https://en.wikipedia.org/wiki/Gemini_%28language_model%29) | Accessible via the Gemini API, compatible with OpenAI libraries. [Reference](https://ai.google.dev/gemini-api/docs/openai) |
-| **OpenAI**   | Developer of GPT series models, including GPT-4, widely used for natural language understanding and generation. [Reference](https://openai.com/) | Integration through OpenAI's REST API and client libraries.                                                    |
-| **Ollama**   | A platform offering access to various LLMs, enabling local and cloud-based model deployment. [Reference](https://www.ollama.ai/) | Integration details can be found in their official documentation.                                             |
-| **Claude**   | Anthropic's Claude models for safe and capable language generation. [Reference](https://www.anthropic.com/) | Accessed via the Anthropic API. |
-| **DeepSeek** | Developer of the DeepSeek family of models for code and chat. [Reference](https://www.deepseek.com/) | Access via OpenAI compatible API at `https://api.deepseek.com`. |
-
+| **OpenAI**   | Developer of GPT series models, including GPT-4, widely used for natural language understanding and generation. [Reference](https://openai.com/)  | Integration through OpenAI's REST API and client libraries.                                                                |
+| **Ollama**   | A platform offering access to various LLMs, enabling local and cloud-based model deployment. [Reference](https://www.ollama.ai/)                  | Integration details can be found in their official documentation.                                                          |
+| **Claude**   | Anthropic's Claude models for safe and capable language generation. [Reference](https://www.anthropic.com/)                                       | Accessed via the Anthropic API.                                                                                            |
+| **DeepSeek** | Developer of the DeepSeek family of models for code and chat. [Reference](https://www.deepseek.com/)                                              | Access via OpenAI compatible API at `https://api.deepseek.com`.                                                            |
 
 ### Evaluating against Human Designed baselines
 
@@ -111,7 +110,6 @@ Including but not limited to CMA-ES and DE variants.
 
 For the final validation **BLADE** uses [**IOHprofiler**](https://iohprofiler.github.io/), providing detailed tracking and visualization of performance metrics.
 
-
 ## 🎁 Installation
 
 It is the easiest to use BLADE from the pypi package (`iohblade`).
@@ -119,6 +117,7 @@ It is the easiest to use BLADE from the pypi package (`iohblade`).
 ```bash
   pip install iohblade
 ```
+
 > [!Important]
 > The Python version **must** be larger or equal to Python 3.11.
 > You need an OpenAI/Gemini/Ollama/Claude/DeepSeek API key for using LLM models.
@@ -127,32 +126,35 @@ You can also install the package from source using <a href="https://docs.astral.
 make sure you have `uv` installed.
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/XAI-liacs/BLADE.git
    cd BLADE
    ```
 
 2. Install the required dependencies via uv:
+
    ```bash
    uv sync
    ```
 
-3. *(Optional)* Install additional packages:
+3. _(Optional)_ Install additional packages:
    ```bash
    uv sync --group kerneltuner --group dev --group docs
    ```
    This will install additional dependencies for development and building documentation.
-   The (experimental) auto-kernel application is also under a separate group for now. 
-4. *(Optional)* Intall Support for MLX optimised LLMs:
-    ```bash
-    uv sync --group dev --group apple-silicon --prerelease=allow
-    ```
-    Select all the groups required, and append it with `--group apple-silicon --prerelease=allow`, to install
-    libraries that enable MLX Optimised LLMs support through `mlx-lm` and `LMStudio`.
+   The (experimental) auto-kernel application is also under a separate group for now.
+4. _(Optional)_ Intall Support for MLX optimised LLMs:
+   ```bash
+   uv sync --group dev --group apple-silicon --prerelease=allow
+   ```
+   Select all the groups required, and append it with `--group apple-silicon --prerelease=allow`, to install
+   libraries that enable MLX Optimised LLMs support through `mlx-lm` and `LMStudio`.
 
 ## 💻 Quick Start
 
 1. Set up an API key for your preferred provider:
+
    - Obtain an API key from [OpenAI](https://openai.com/), Claude, Gemini, or another LLM provider.
    - Set the API key in your environment variables:
      ```bash
@@ -161,39 +163,39 @@ make sure you have `uv` installed.
 
 2. Running an Experiment
 
-    To run a benchmarking experiment using BLADE:
+   To run a benchmarking experiment using BLADE:
 
-    ```python
-    import os
+   ```python
+   import os
 
-    from iohblade.experiment import Experiment
-    from iohblade.llm import Ollama_LLM
-    from iohblade.methods import LLaMEA, RandomSearch
-    from iohblade.problems import BBOB_SBOX
-    from iohblade.loggers import ExperimentLogger
+   from iohblade.experiment import Experiment
+   from iohblade.llm import Ollama_LLM
+   from iohblade.methods import LLaMEA, RandomSearch
+   from iohblade.problems import BBOB_SBOX
+   from iohblade.loggers import ExperimentLogger
 
-    llm = Ollama_LLM("qwen2.5-coder:14b") #qwen2.5-coder:14b, deepseek-coder-v2:16b
-    budget = 50 #short budget for testing
+   llm = Ollama_LLM("qwen2.5-coder:14b") #qwen2.5-coder:14b, deepseek-coder-v2:16b
+   budget = 50 #short budget for testing
 
-    RS = RandomSearch(llm, budget=budget) #Random Search baseline
-    LLaMEA_method = LLaMEA(llm, budget=budget, name="LLaMEA", n_parents=4, n_offspring=12, elitism=False) #LLamEA with 4,12 strategy
-    methods = [RS, LLaMEA_method]
+   RS = RandomSearch(llm, budget=budget) #Random Search baseline
+   LLaMEA_method = LLaMEA(llm, budget=budget, name="LLaMEA", n_parents=4, n_offspring=12, elitism=False) #LLamEA with 4,12 strategy
+   methods = [RS, LLaMEA_method]
 
-    problems = []
-    # include all SBOX_COST functions with 5 instances for training and 10 for final validation as the benchmark problem.
-    training_instances = [(f, i) for f in range(1,25) for i in range(1, 6)]
-    test_instances = [(f, i) for f in range(1,25) for i in range(5, 16)]
-    problems.append(BBOB_SBOX(training_instances=training_instances, test_instances=test_instances, dims=[5], budget_factor=2000, name=f"SBOX_COST"))
-    # Set up the experiment object with 5 independent runs per method/problem. (in this case 1 problem)
-    logger = ExperimentLogger("results/SBOX")
-    experiment = Experiment(methods=methods, problems=problems, runs=5, show_stdout=True, exp_logger=logger) #normal run
-    experiment() #run the experiment, all data is logged in the folder results/SBOX/
-    ```
+   problems = []
+   # include all SBOX_COST functions with 5 instances for training and 10 for final validation as the benchmark problem.
+   training_instances = [(f, i) for f in range(1,25) for i in range(1, 6)]
+   test_instances = [(f, i) for f in range(1,25) for i in range(5, 16)]
+   problems.append(BBOB_SBOX(training_instances=training_instances, test_instances=test_instances, dims=[5], budget_factor=2000, name=f"SBOX_COST"))
+   # Set up the experiment object with 5 independent runs per method/problem. (in this case 1 problem)
+   logger = ExperimentLogger("results/SBOX")
+   experiment = Experiment(methods=methods, problems=problems, runs=5, show_stdout=True, exp_logger=logger) #normal run
+   experiment() #run the experiment, all data is logged in the folder results/SBOX/
+   ```
 
 ### Trackio logging
 
 To mirror results to a [Trackio](https://github.com/gradio-app/trackio) dashboard,
-install the optional dependency and use ``TrackioExperimentLogger``:
+install the optional dependency and use `TrackioExperimentLogger`:
 
 ```bash
 uv sync --group trackio
@@ -220,7 +222,6 @@ The app lists available experiments from the `results` directory, displays their
 
 ## 💻 Examples
 
-
 See the files in the `examples` folder for examples on experiments and visualisations.
 
 ---
@@ -239,8 +240,8 @@ Please refer to CONTRIBUTING.md for more details on contributing guidelines.
 
 Distributed under the [MIT](https://choosealicense.com/licenses/mit/) License. See `LICENSE` for more information.
 
-
 ## ✨ Citation
+
 If you use BLADE in your research, please cite the following work:
 
 ```bibtex
@@ -260,5 +261,6 @@ If you use BLADE in your research, please cite the following work:
 
 The repository also provides a [`CITATION.cff`](./CITATION.cff) file for use with GitHub's citation feature.
 
------
+---
+
 Happy Benchmarking with IOH-BLADE! 🚀

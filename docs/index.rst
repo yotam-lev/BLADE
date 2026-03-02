@@ -33,7 +33,7 @@ BLADE
 
 **BLADE** is a Python framework for benchmarking the Llm Assisted Design and Evolution of algorithms.
 **BLADE** (Benchmark suite for LLM-driven Automated Design and Evolution) provides a standardized benchmark suite for evaluating automatic algorithm design algorithms, particularly those generating metaheuristics by large language models (LLMs).
-It focuses on **continuous black-box optimization** and integrates a diverse set of **problems** and **methods**, facilitating fair and comprehensive benchmarking.
+It focuses on **continuous black-box optimisation** and integrates a diverse set of **problems** and **methods**, facilitating fair and comprehensive benchmarking.
 
 
 🔥 News
@@ -45,7 +45,7 @@ It focuses on **continuous black-box optimization** and integrates a diverse set
 Features
 --------
 
-- **Comprehensive Benchmark Suite:** Covers various classes of black-box optimization problems.
+- **Comprehensive Benchmark Suite:** Covers various classes of black-box optimisation problems.
 - **LLM-Driven Algorithm Design:** Supports algorithm evolution and design using large language models.
 - **Built-In Baselines:** Includes state-of-the-art metaheuristics for comparison and LLM-driven AAD algorithms.
 - **Automatic Logging & Visualization:** Integrated with **IOHprofiler** for performance tracking.
@@ -63,12 +63,12 @@ BLADE incorporates several benchmark function sets to provide a comprehensive ev
      - Short Description
      - Number of Functions
      - Multiple Instances
-   * - **BBOB** (Black-Box Optimization Benchmarking)
-     - A suite of 24 noiseless functions designed for benchmarking continuous optimization algorithms. `Reference <https://arxiv.org/pdf/1903.06396>`_
+   * - **BBOB** (Black-Box optimisation Benchmarking)
+     - A suite of 24 noiseless functions designed for benchmarking continuous optimisation algorithms. `Reference <https://arxiv.org/pdf/1903.06396>`_
      - 24
      - Yes
    * - **SBOX-COST**
-     - A set of 24 boundary-constrained functions focusing on strict box-constraint optimization scenarios. `Reference <https://inria.hal.science/hal-04403658/file/sboxcost-cmacomparison-authorversion.pdf>`_
+     - A set of 24 boundary-constrained functions focusing on strict box-constraint optimisation scenarios. `Reference <https://inria.hal.science/hal-04403658/file/sboxcost-cmacomparison-authorversion.pdf>`_
      - 24
      - Yes
    * - **MA-BBOB** (Many-Affine BBOB)

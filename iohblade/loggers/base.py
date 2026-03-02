@@ -398,7 +398,7 @@ class ExperimentLogger:
 
 class RunLogger:
     """
-    Logs an LLM-driven optimization run.
+    Logs an LLM-driven optimisation run.
     """
 
     def __init__(self, name="", root_dir="", budget=100, progress_callback=None):

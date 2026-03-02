@@ -19,7 +19,7 @@ from .photonics_instances import (
 
 class Photonics(Problem):
     """
-    Problem class for evaluating optimization algorithms on different Real-World Photnoics applications.
+    Problem class for evaluating optimisation algorithms on different Real-World Photnoics applications.
     """
 
     def __init__(
@@ -75,7 +75,7 @@ class Photonics(Problem):
         self.seeds = list(range(seeds))
         self.task_prompt = """
 You are a Python developer and AI and physics researcher.
-Your task is to develop a novel heuristic optimization algorithm for photonic optimization problems.
+Your task is to develop a novel heuristic optimisation algorithm for photonic optimisation problems.
 The code should contain an `__init__(self, budget, dim)` function with optional additional arguments and the function `def __call__(self, func)`, which should optimize the black box function `func` using `self.budget` function evaluations.
 The func() can only be called as many times as the budget allows, not more. 
 """

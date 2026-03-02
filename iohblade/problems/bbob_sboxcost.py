@@ -23,17 +23,17 @@ from ..utils import OverBudgetException, aoc_logger, correct_aoc
 
 class BBOB_SBOX(Problem):
     """
-    Problem class for evaluating optimization algorithms on the SBOX-COST or BBOB benchmark. See also https://github.com/sbox-cost/Examples
+    Problem class for evaluating optimisation algorithms on the SBOX-COST or BBOB benchmark. See also https://github.com/sbox-cost/Examples
 
-    Black-Box Optimization Benchmarking (BBOB) problem set, which contains 24 noiseless real-valued test functions supported on [-5, 5]^n, where n is the dimensionality.
+    Black-Box optimisation Benchmarking (BBOB) problem set, which contains 24 noiseless real-valued test functions supported on [-5, 5]^n, where n is the dimensionality.
 
     These problems were orginally proposed by Hansen et. al. in [FinckHRA10] and was implemented as the core component of the COmparing Continous Optimizer (COCO) platform [HansenARMTB20].
     We took the implementation of those 24 functions in https://github.com/numbbo/coco/tree/master/code-experiments/src (v2.2) and adopted those to our framework.
 
 
-    [HansenARMTB20] Nikolaus Hansen, Anne Auger, Raymond Ros, Olaf Mersmann, Tea Tusar, and Dimo Brockhoff. “COCO: A platform for comparing continuous optimizers in a black-box setting.” Optimization Methods and Software (2020): 1-31.
+    [HansenARMTB20] Nikolaus Hansen, Anne Auger, Raymond Ros, Olaf Mersmann, Tea Tusar, and Dimo Brockhoff. “COCO: A platform for comparing continuous optimizers in a black-box setting.” optimisation Methods and Software (2020): 1-31.
 
-    [FinckHRA10] Steffen Finck, Nikolaus Hansen, Raymond Ros, and Anne Auger. “Real-parameter black-box optimization benchmarking 2009: Presentation of the noiseless functions.” Technical Report 2009/20, Research Center PPE, 2009. Updated February, 2010.
+    [FinckHRA10] Steffen Finck, Nikolaus Hansen, Raymond Ros, and Anne Auger. “Real-parameter black-box optimisation benchmarking 2009: Presentation of the noiseless functions.” Technical Report 2009/20, Research Center PPE, 2009. Updated February, 2010.
     """
 
     def __init__(
@@ -150,27 +150,27 @@ class BBOB_SBOX(Problem):
             if problem_type == ioh.ProblemClass.SBOX
             else "unconstrained"
         )
-        extra_prompt = f"The optimization algorithm should handle a wide range of tasks, which is evaluated on a {self.benchmark_name}"
+        extra_prompt = f"The optimisation algorithm should handle a wide range of tasks, which is evaluated on a {self.benchmark_name}"
         if (
             self.specific_fid is not None
             and self.specific_fid < 25
             and self.specific_fid > 0
         ):
-            extra_prompt = f"The optimization algorithm should work on different instances of noiseless {box_constrained} functions. Specifically function: {functions[self.specific_fid-1]}."
+            extra_prompt = f"The optimisation algorithm should work on different instances of noiseless {box_constrained} functions. Specifically function: {functions[self.specific_fid-1]}."
         elif (
             self.specific_group is not None
             and self.specific_group < 6
             and self.specific_group > 0
         ):
-            extra_prompt = f"The optimization algorithm should work on different instances of noiseless {box_constrained} functions. Specifically it should work well for {function_groups[self.specific_group-1]}."
+            extra_prompt = f"The optimisation algorithm should work on different instances of noiseless {box_constrained} functions. Specifically it should work well for {function_groups[self.specific_group-1]}."
         else:
-            extra_prompt = f"The optimization algorithm should work on different instances of noiseless {box_constrained} functions."
+            extra_prompt = f"The optimisation algorithm should work on different instances of noiseless {box_constrained} functions."
 
         self.task_prompt = f"""
-You are a Python expert working on a new optimization algorithm. You can use numpy v2 and some other standard libraries.
-Your task is to develop a novel heuristic optimization algorithm for continuous optimization problems.
-{extra_prompt} Your task is to write the optimization algorithm in Python code. 
-Each of the optimization functions has a search space between -5.0 (lower bound) and 5.0 (upper bound). The dimensionality can be varied.
+You are a Python expert working on a new optimisation algorithm. You can use numpy v2 and some other standard libraries.
+Your task is to develop a novel heuristic optimisation algorithm for continuous optimisation problems.
+{extra_prompt} Your task is to write the optimisation algorithm in Python code. 
+Each of the optimisation functions has a search space between -5.0 (lower bound) and 5.0 (upper bound). The dimensionality can be varied.
 The code should contain an `__init__(self, budget, dim)` function with optional additional arguments and the function `def __call__(self, func)`, which should optimize the black box function `func` using `self.budget` function evaluations.
 The func() can only be called as many times as the budget allows, not more. 
 """

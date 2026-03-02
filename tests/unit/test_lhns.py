@@ -130,7 +130,7 @@ class FourierCandidate:
 
     def _define_bounds(self):
          """
-         Defines bounds for each coefficient to guide the optimization.
+         Defines bounds for each coefficient to guide the optimisation.
          The first coefficient is encouraged to be negative.
          The last coefficient is forced to be positive.
          Other coefficients have relatively wide bounds centered around zero.
@@ -150,7 +150,7 @@ class FourierCandidate:
         """
         initial_guess = self._generate_initial_guess()
 
-        # Optimization using minimize with constraints
+        # optimisation using minimize with constraints
         result = minimize(self._objective_function, initial_guess,
                         method='SLSQP',  # or 'trust-constr'
                         bounds=self.bounds,
@@ -160,7 +160,7 @@ class FourierCandidate:
         if result.success:
             return result.x.tolist()
         else:
-            print("Warning: Optimization failed. Returning initial guess.")
+            print("Warning: optimisation failed. Returning initial guess.")
             return initial_guess.tolist()
 
     def _generate_initial_guess(self):
@@ -237,7 +237,7 @@ class FourierCandidate:
 
     def _define_bounds(self):
          """
-         Defines bounds for each coefficient to guide the optimization.
+         Defines bounds for each coefficient to guide the optimisation.
          The first coefficient is encouraged to be negative.
          The last coefficient is forced to be positive.
          Other coefficients have relatively wide bounds centered around zero.
@@ -257,7 +257,7 @@ class FourierCandidate:
         """
         initial_guess = self._generate_initial_guess()
 
-        # Optimization using minimize with constraints
+        # optimisation using minimize with constraints
         result = minimize(self._objective_function, initial_guess,
                         method='Nelder-Mead',  # Gradient-free method
                         bounds=self.bounds,
@@ -266,7 +266,7 @@ class FourierCandidate:
         if result.success:
             return result.x.tolist()
         else:
-            print("Warning: Optimization failed. Returning initial guess.")
+            print("Warning: optimisation failed. Returning initial guess.")
             return initial_guess.tolist()
 
     def _generate_initial_guess(self):
