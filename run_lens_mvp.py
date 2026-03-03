@@ -4,15 +4,6 @@ with NO domain-specific context.
 """
 import os
 import sys
-import tempfile
-from pathlib import Path
-
-# ── 0. Path setup ─────────────────────────────────────────────────
-CAMERA_LENS_ROOT = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), "..", "CameraLensSimulation")
-)
-if CAMERA_LENS_ROOT not in sys.path:
-    sys.path.insert(0, CAMERA_LENS_ROOT)
 
 import jax
 jax.config.update("jax_enable_x64", True)
@@ -20,21 +11,8 @@ jax.config.update("jax_enable_x64", True)
 from iohblade.experiment import Experiment
 from iohblade.llm import Ollama_LLM
 from iohblade.methods import LLaMEA, RandomSearch
-from iohblade.problems.lens_optimisation import LensOptimisation
 from iohblade.loggers import ExperimentLogger
-
-
-class LocalLensOptimisation(LensOptimisation):
-    """Reuse the current interpreter which already has lensgopt
-    installed, instead of creating a temp venv that would try to
-    pip-install CameraLensSimulation from GitHub (and fail)."""
-
-    def _ensure_env(self):
-        if self._env_path is not None:
-            return
-        self._env_path = Path(tempfile.mkdtemp(prefix="blade_env_"))
-        self._python_bin = Path(sys.executable)
-
+from local_lens_problem import LocalLensOptimisation
 
 if __name__ == "__main__":
     llm = Ollama_LLM("qwen2.5-coder:14b")
